@@ -1,0 +1,30 @@
+[package]
+name = "rust_zooming_cat_v2"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+log = { version = "0.4.*" }
+env_logger = { version = "*", features = [] }
+windows = { version = "0.60.*", features = [
+    "Win32_UI_HiDpi",
+    "Win32_UI_Shell",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_Foundation",
+    "Win32_System",
+    "Win32_System_Com",
+    "Win32_System_Com_StructuredStorage",
+    "Win32_System_Variant",
+    "Win32_System_LibraryLoader",
+    "Win32_Graphics",
+    "Win32_Graphics_DirectWrite",
+    "Win32_Graphics_Dwm",
+    "Win32_Graphics_Gdi",
+    "Win32_Graphics_Dxgi",
+    "Win32_Graphics_Dxgi_Common",
+    "Win32_Graphics_Imaging",
+    "Win32_Graphics_Direct2D",
+    "Win32_Graphics_Direct2D_Common",
+] }
+
+
