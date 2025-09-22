@@ -4,8 +4,7 @@ use crate::{
 };
 use log::debug;
 use std::{
-    sync::mpsc::Sender,
-    thread::{self, JoinHandle},
+    ptr::addr_of, sync::mpsc::Sender, thread::{self, JoinHandle}
 };
 use windows::{
     Win32::{
@@ -123,8 +122,9 @@ impl Window {
                 // Start window msg loop
 
                 unsafe {
-                    let sender_ptr = Box::into_raw(Box::new(event_sender)) as isize;
-                    SetWindowLongPtrW(hwnd, GWLP_USERDATA, sender_ptr);
+                    // let sender_ptr = Box::into_raw(Box::new(event_sender)) as isize;
+                    let sender_ptr2 = &raw const event_sender as isize;
+                    SetWindowLongPtrW(hwnd, GWLP_USERDATA, sender_ptr2);
                 }
                 let mut msg = MSG::default();
                 while unsafe { GetMessageW(&mut msg, Some(hwnd), 0, 0).into() } {

@@ -15,6 +15,7 @@ pub struct App {
     pub render: Option<Box<dyn Render>>,
     pub timer_manager: Option<TimerManager>,
 }
+
 impl App {
     pub fn into_with_render<R: Render + 'static>(self, render: R) -> App {
         App {
